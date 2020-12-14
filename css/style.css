@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemonada&family=Roboto:wght@100;400;700&display=swap');
+
+/* * mean you wanna apply to everything  */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darkslategray;
+    color: #fff;
+    font-family: 'Lemonada', 'sans-serif';
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.user-form {
+    width: 100%;
+    max-width: 700px;
+}
+
+.user-form input {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    border: none;
+    color: #000;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+    text-align: center;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.user-form input::placeholder {
+    color: #bbb
+}
+
+.user-form input:focus {
+    outline: none;
+}
+
+.cards {
+    border-radius: 20px;
+    max-width: 800px;
+    display: flex;
+    padding: 3rem;
+    margin-bottom: 0 1.5rem;
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+}
