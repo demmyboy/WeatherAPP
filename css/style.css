@@ -58,3 +58,7 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.weather-info span {
+    font-size: 1.0rem;
+}
