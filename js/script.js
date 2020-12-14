@@ -6,10 +6,17 @@ const main = document.getElementById('main')
 
 
 async function getCityTemp() {
-    const city = search.value
-    const res = await axios.get(`${API_URL}${city}&appid=13515bb020bd78b28c20e336ca557eac`)
-    createCityCard(res.data)
-    console.log(res.data)
+    try {
+        const city = search.value
+        const res = await axios.get(`${API_URL}${city}&appid=13515bb020bd78b28c20e336ca557eac`)
+        createCityCard(res.data)
+            //console.log(res.data)
+    } catch (err) {
+        if (err.response.status == 404) {
+            createErrorCard('City Not Found')
+                //console.log(err)
+        }
+    }
 }
 
 function createCityCard(city) {
@@ -37,6 +44,16 @@ function createCityCard(city) {
 function kelvinToCelcius(kelvin) {
     const celcius = kelvin - 273.15
     return celcius
+}
+
+function createErrorCard(message) {
+    const cardHTML = `
+    <div class="cards">
+        <h2>${message}</h2>
+    </div>`
+
+    main.innerHTML = cardHTML
+
 }
 
 form.addEventListener('submit', (e) => {
